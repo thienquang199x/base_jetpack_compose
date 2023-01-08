@@ -7,14 +7,14 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 
 @Composable
-fun <T> AppWithAdsComposable(viewModel: BaseViewModel<T>,
-                         content: @Composable () -> Unit) {
+fun <T> ComponentWithBannerAds(viewModel: BaseViewModel<T>,
+                               content: @Composable () -> Unit) {
     Column {
         Box(modifier = Modifier
             .fillMaxSize()
             .weight(1f)) {
-            AppComposable(viewModel = viewModel, content)
+            content()
         }
-        viewModel.adsManager.BannerAdsView()
+        viewModel.adsManager.BannerAdsComponent()
     }
 }

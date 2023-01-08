@@ -16,6 +16,13 @@ class App : Application() {
     override fun onCreate() {
         super.onCreate()
 
-        adsManager.initialize(this, adConfig = AdConfig(bannerAdId = "ca-app-pub-3940256099942544/6300978111"))
+        adsManager.initialize(
+            this,
+            adConfig = AdConfig(
+                bannerAdId = "ca-app-pub-3940256099942544/6300978111",
+                nativeAdId = "ca-app-pub-3940256099942544/2247696110"
+            ),
+            testDeviceIds = mutableListOf("FA32582421E0336587C7BE0DCB63991A")
+        )
     }
 }
